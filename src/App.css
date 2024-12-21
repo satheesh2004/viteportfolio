@@ -1,0 +1,46 @@
+
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: white;
+}
+
+.name {
+  font-size: 8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 3rem;
+}
+
+.second{
+  margin-top: 150px;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.para{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+}
+.about-h2{
+  opacity: 1;
+  margin-top: 80px;
+}
+
+
