@@ -1,5 +1,7 @@
-
-
+body{
+  background-color: #fafdff;
+  
+}
 
 .container {
   display: flex;
@@ -7,17 +9,29 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: white;
+ 
+}
+
+.img{
+  width: 180px;
+  height: 180px;
+ 
 }
 
 .name {
   font-size: 8rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-bottom: 1rem;
+}
+.name1{
+  font-size: 5rem;
+  font-weight: bold;
+  margin-left: 50px;
+  margin-bottom: 1rem; 
 }
 
 .title {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #ccc;
   margin-bottom: 3rem;
 }
@@ -30,8 +44,6 @@
   justify-content: center;
 }
 
-
-
 .para{
   display: flex;
   align-items: center;
@@ -42,5 +54,21 @@
   opacity: 1;
   margin-top: 80px;
 }
+
+.five{
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line{
+  background-color: black;
+  width: auto;
+  margin-top: 10px;
+  padding: 10px;
+  height: 10px;
+}
+
 
 
