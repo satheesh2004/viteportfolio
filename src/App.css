@@ -17,6 +17,11 @@ body{
   height: 180px;
  
 }
+.f2{
+  padding: 40px;
+  line-height: 120%;
+  color: gray;
+}
 
 .name {
   font-size: 8rem;
@@ -70,5 +75,171 @@ body{
   height: 10px;
 }
 
+/* Scroll Message */
+.over {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 200px;
+  background: rgba(255, 255, 0, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  color: #000;
+  z-index: 1000;
+  text-align: center;
+  animation: fadeInOut 2s infinite;
+  pointer-events: none; /* Prevent interference with user interactions */
+}
+
+.glow {
+  
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  border-radius: 0%;
+  margin: 0 auto 5px;
+  box-shadow: 0 0 10px 2px yellow;
+  animation: glowEffect 1.5s infinite alternate;
+}
+
+/* Keyframes for glowing effect */
+@keyframes glowEffect {
+  from {
+    opacity: 1;
+    box-shadow: 0 0 10px 5px yellow;
+  }
+  to {
+    opacity: 0.5;
+    box-shadow: 0 0 5px 2px yellow;
+  }
+}
+
+/* Fade in and out for the message */
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+  
+
+  
+
+  .container {
+    height: 700px;
+    margin-top: 70px;
+    padding-bottom: 40px;
+  }
+
+  .name {
+    font-size: 5rem;
+  }
+
+  #six .f1{
+    margin-bottom: 20px;
+      font-size: 28px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+  #six{
+   font-family: sans-serif;
+  }
+
+  #six h1 {
+    font-size: 1.5rem;
+  }
+  #six h2{
+  
+    font-size: 2rem;
+  }
+  #six .img {
+    width: 150px;
+    height: 150px;
+  }
+
+  #five {
+    padding: 10px;
+  }
+  #five p{
+     color: gray;
+     
+  }
+
+  .name1{
+    font-size: 70px;
+    margin-top: 100px;
+    position: relative;
+    right: 20px;
+    margin-bottom: 100px;
+  }
+
+  .abilities {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .para {
+    display: flex;
+    flex-direction: column;
+    padding: 35px;
+    margin: 10px;
+  }
+
+  #services .grid {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  #home {
+    height: 700px;
+    padding: 20px;
+  }
+
+  #home h1 {
+    font-size: 2rem;
+  }
+
+  #home p {
+    font-size: 1rem;
+  }
+
+  #contact {
+   padding: 0%;
+    text-align: center;
+  }
+
+  #contact .line {
+    width: 350px;
+  }
+  #contact a{
+   
+   position: relative;
+   top: 30px;
+   bottom: 20px;
+  }
+  .name2{
+    padding-left: 40px;
+  }
+  .cons2{
+    font-size: 50px;
+  }
+  .f2{
+    padding: 30px;
+    color: gray;
+    font-size: 50px;
+  }
+}
 
 

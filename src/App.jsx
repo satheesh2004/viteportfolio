@@ -28,6 +28,14 @@ function App() {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
 
   const toggleNavbar = () => {
@@ -65,8 +73,13 @@ function App() {
       Portfolio
     </h1>
   </div>
+
+  {/* <div className="over" style={{ top: `${scrollY + 60}px` }}>
+      <div className="glow"></div>
+      <p>larger device for the better animation experience!</p>
+    </div> */}
   <button
-    className="hamburger text-black text-3xl p-2 rounded-md focus:outline-none absolute top-4 right-6 z-50"
+    className="hamburger text-black text-3xl p-2 rounded-md focus:outline-none "
     onClick={toggleNavbar}
   >
     ☰
@@ -100,21 +113,21 @@ function App() {
       href="#education"
       className="hover:text-gray-400 p-2 border-2 rounded-md"
       onClick={() => {
-        scrollToSection("services");
-        toggleNavbar();
-      }}
-    >
-      Services
-    </a>
-    <a
-      href="#abilities"
-      className="hover:text-gray-400 p-2 border-2 rounded-md"
-      onClick={() => {
         scrollToSection("five");
         toggleNavbar();
       }}
     >
       Abilities
+    </a>
+    <a
+      href="#abilities"
+      className="hover:text-gray-400 p-2 border-2 rounded-md"
+      onClick={() => {
+        scrollToSection("services");
+        toggleNavbar();
+      }}
+    >
+      Services
     </a>
     <a
       href="#contact"
@@ -137,55 +150,55 @@ function App() {
       </div>
 
   <div id="six">
-        <div className=" text-center font-sans leading-relaxed text-black text-7xl  md:text-7xl py-10 " data-aos="fade-up" >
-                              <h1 className="text-7xl  md:text-7xl" >
+        <div className=" text-center font-sans leading-relaxed text-black text-7xl  mt-24 mb-28  " data-aos="fade-up" >
+                              <h1 className="text-7xl f1 " >
                           Satheesh Menezes is an <i>Indian</i>
                           <img
-                            className=" img w-22 h-22 md:w-20 md:h-20 inline-block rounded-full align-middle ml-2"
+                            className=" img w-22 h-22  inline-block rounded-full align-middle ml-2"
                             src={satheesh}
                             alt="Satheesh"
                           />
                           <br />
                           Webflow Developer,
                         </h1>
-                                              <div className=" text-gray-600 font-thin">who builds
+                                              <div className=" text-gray-600 font-thin f2 " data-aos="fade-up"> <h2>who builds
                               websites <br />
                               that drive business <br />
-                              and achieve results
+                              and achieve results </h2>
                         </div>                                                                   
         </div>
   </div>
 
 
 
-<div className=" px-6 py-10" id="five">
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center" data-aos="fade-up">
+<div className=" px-6 py-10 " id="five">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-24 " data-aos="fade-up">
     {/* ABILITIES Title */}
     <div className="name1 text-left text-xl  col-span-1 md:col-span-1 md:row-span-2">
-      <p data-aos="fade-down" className="text-black-800">ABILITIES</p>
+      <h1 data-aos="fade-down" className="text-black-800">ABILITIES</h1>
     </div>
 
     {/* Abilities Grid */}
-    <div className="abilities grid grid-cols-1 md:grid-cols-2 gap-6 col-span-2  " >
-      <div className="para p-10 border border-black-300 gap-9 m-2 rounded-lg shadow-2xl hover:scale-105 transition duration-300">
+    <div className="abilities  grid grid-cols-1 md:grid-cols-2 gap-6 col-span-2  " >
+      <div className="para p-10 border border-black-300 gap-9 m-2 rounded-lg shadow-2xl hover:scale-105 transition duration-3000" data-aos="fade-up">
         <h2 className="head text-lg font-bold mb-2">WEBFLOW DEVELOPMENT</h2>
         <p className="text-sm text-gray-700 font-bold">
           Custom, optimized websites are developed in Webflow, with a focus on impactful design, interactive animations, and exceptional usability.
         </p>
       </div>
-      <div className="para p-10 border border-black-900 gap-9 m-2 rounded-lg shadow-2xl hover:scale-105 transition duration-300">
+      <div className="para p-10 border border-black-900 gap-9 m-2 rounded-lg shadow-2xl hover:scale-105 transition duration-300" data-aos="fade-up">
         <h2 className="head text-lg font-bold mb-2">USER INTERFACE</h2>
-        <p className="text-sm text-gray-700 font-bold">
+        <p className="text-sm text-gray font-bold">
           Creating intuitive and visually engaging interfaces, with a focus on usability and design impact that drive meaningful results.
         </p>
       </div>
-      <div className="para p-10 border border-black-900 gap-9 m-2 rounded-lg shadow-2xl hover:scale-105 transition duration-300">
+      <div className="para p-10 border border-black-900 gap-9 m-2 rounded-lg shadow-2xl hover:scale-105 transition duration-300" data-aos="fade-up">
         <h2 className="head text-lg font-bold mb-2">BACK-END DEVELOPMENT</h2>
         <p className="text-sm text-gray-700 font-bold">
           Developing responsive, high-performance websites with a focus on clean code and seamless user experience.
         </p>
       </div>
-      <div className="para p-10 border border-black-900 gap-9 m-2 rounded-lg shadow-2xl hover:scale-105 transition duration-500">
+      <div className="para p-10 border border-black-900 gap-9 m-2 rounded-lg shadow-2xl hover:scale-105 transition duration-500" data-aos="fade-up">
         <h2 className="head text-lg font-bold mb-2">RESPONSIVE DEVELOPMENT</h2>
         <p className="text-sm text-gray-700 font-bold">
           Custom, optimized websites are developed in Webflow, with a focus on impactful interactive animations, and exceptional usability for every device.
@@ -197,7 +210,7 @@ function App() {
 
 
 
-<div className=" pb-28 pt-0" id="services">
+<div className=" pb-28 pt-0 mb-14" id="services">
 <div className=" py-10 ">
       <h2 className="text-5xl font-bold text-center font-sans mb-20" data-aos="fade-up">Services</h2>
      <div className=" ">
@@ -205,9 +218,9 @@ function App() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            className="bg-white rounded-lg shadow-lg  hover:shadow-xl transition-shadow " data-aos="fade-up"
           >
-            <div className="relative">
+            <div className="relative" data-aos="fade-up">
               <img  
                 src={service.image}
                 alt={service.title}
@@ -217,8 +230,8 @@ function App() {
                 {service.title}
               </h3>
             </div>
-            <div className="p-4">
-              <p className="text-black">{service.description}</p>
+            <div className="p-4" data-aos="fade-up">
+              <p className="text-gray">{service.description}</p>
             </div>
           </div>
         ))}
@@ -229,23 +242,23 @@ function App() {
 
 
 <div id="home"
-  className="relative h-screen w-full bg-black bg-cover bg-center" data-aos="fade-up"
+  className="relative h-screen w-full bg-black bg-cover mb-20 bg-center" data-aos="fade-up"
   style={{ backgroundImage: `url(${satheesh})` }}
 >
   {/* Overlay */}
   <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-
+  <div className=" sm:flex-row flex-col">
   {/* Content */}
-  <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+  <div className="cons relative z-10 flex flex-col items-center justify-center h-full pt-32 text-white ">
     {/* Title */}
     <h1 className="text-6xl font-bold mb-4" data-aos="fade-up">Webflow Development</h1>
     <p className="text-lg pt-5 uppercase tracking-widest">2025</p>
 
     {/* About Me Section */}
-    <div className="mt-20 flex flex-col md:flex-row items-center md:items-start text-center md:text-left px-4 md:px-20 transition-all duration-1000">
+    <div className="mt-20 flex flex-col md:flex-row items-center md:items-start text-center  px-4 ">
       
-      <div className="md:w-2/3" data-aos="fade-up">
-        <p className="text-lg text-center ml-60 pl-64 font-sans space-y-0">
+      <div className="cons2" data-aos="fade-up">
+        <p className="text-lg tex w-96 text-center flex justify-center  font-sans space-y-0">
           I’m a passionate and results-driven Full Stack Developer with a strong foundation in modern web
           development and a knack for creating efficient, user-friendly applications.
         </p>
@@ -254,12 +267,15 @@ function App() {
 
   
   </div>
+  </div>
+
+  </div>
 
 
 
   <div id="contact">
   <div>
-    <div className="font-sans text-black text-9xl p-20" data-aos="fade-up">
+    <div className="font-sans name2 text-black text-9xl p-20" data-aos="fade-up">
       Let`s Chat!
       <div
         className="line animate__animated animate__fadeInUp"
@@ -267,9 +283,9 @@ function App() {
       ></div>
     </div>
   </div>
-  <div className="flex flex-col lg:flex-row">
+  <div className="con flex flex-col lg:flex-row">
     <div className="contact mx-4 lg:mx-64 p-4 lg:p-20">
-      <h1 className="flex flex-col text-3xl font-sans p-4">Social</h1>
+      <h1 className="flex flex-col text-4xl font-sans p-4">Social</h1>
       <div className="flex flex-col gap-2 p-4 font-sans text-xl rounded">
         <a
           href="https://www.instagram.com/__s.a.t.h.e.e.s.h__/?igsh=ZWgzb2gxZG42eDEy"
@@ -327,7 +343,7 @@ function App() {
     </div>
 
     <div className="contact flex-auto mx-4 lg:mx-0 p-4 lg:p-20">
-      <h1 className="flex flex-col text-3xl font-sans p-4">Social</h1>
+      <h1 className="flex flex-col text-4xl font-sans p-4">Contact</h1>
       <div className="flex flex-col gap-2 p-4 font-sans text-xl rounded">
         <a
           href="https://wa.me/9042210689"
@@ -372,19 +388,21 @@ function App() {
         </svg>
       </div>
     </div>
+
+
+
   </div>
+   
 </div>
 
 
 
 
 
-<div className="absolute bottom-10 text-white flex justify-between w-full px-10 text-sm">
-            <span>2024</span>
-            <span className="uppercase">About More</span>
-          </div>
 
-</div>
+ 
+
+
 </div>
   );
 }
